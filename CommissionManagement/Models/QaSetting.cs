@@ -15,5 +15,5 @@ public partial class QaSetting
 
     public int SortOrder { get; set; }
 
-    public bool? IsVisible { get; set; }
+    public bool IsVisible { get; set; }
 }

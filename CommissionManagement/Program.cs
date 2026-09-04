@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using CommissionManagement.Models;
+using CommissionManagement.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,11 +9,13 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddDbContext<CommissionContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("CommissionContext")));
 builder.Services.AddOpenApi();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddScoped<IQaSettingService, QaSettingService>();
 
 var app = builder.Build();
 
