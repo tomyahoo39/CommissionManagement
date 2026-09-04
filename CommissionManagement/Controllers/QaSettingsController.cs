@@ -28,4 +28,35 @@ public class QaSettingsController : ControllerBase
         var qa = await _service.GetAllQaForClient();
         return Ok(qa);
     }
+
+    [HttpPost("CreateQaSetting")]
+    public async Task<IActionResult> CreateQaSetting([FromBody] QaSettingServiceCreateDTO newQa)
+    {
+        await _service.Create(newQa);
+        return Ok();
+    }
+
+    [HttpPut("Update/{id}")]
+    public async Task<IActionResult> UpdateQaSetting(int id, [FromBody] QaSettingServiceDTO updatedQa)
+    {
+        var qa = await _service.Update(id, updatedQa);
+        if(qa == false)
+        {
+            return NotFound();
+        }
+
+        return Ok();
+    }
+
+    [HttpDelete("Delete/{id}")]
+    public async Task<IActionResult> DeleteQaSetting(int id)
+    {
+        var qa = await _service.Delete(id);
+        if (qa == false)
+        {
+            return NotFound();
+        }
+        return Ok();
+
+    }
 }

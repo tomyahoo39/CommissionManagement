@@ -43,7 +43,7 @@ namespace CommissionManagement.Services
             return query;
         }
 
-        public async Task Create(QaSettingServiceGetAllDTO newQa)
+        public async Task Create(QaSettingServiceCreateDTO newQa)
         {
             var qaSetting = new QaSetting
             {

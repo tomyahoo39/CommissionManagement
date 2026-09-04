@@ -1,6 +1,6 @@
 ﻿namespace CommissionManagement.DTO
 {
-    public class QaSettingServiceGetAllDTO
+    public class QaSettingServiceCreateDTO
     {
         public string Question { get; set; }
 

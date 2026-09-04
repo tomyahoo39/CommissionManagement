@@ -7,7 +7,7 @@ namespace CommissionManagement.Services
         Task<IEnumerable<QaSettingServiceClientDTO>> GetAllQaForClient();
         Task<IEnumerable<QaSettingServiceDTO>> GetAllQaForAdmin();
 
-        Task Create(QaSettingServiceGetAllDTO newQa);
+        Task Create(QaSettingServiceCreateDTO newQa);
 
         Task<bool> Update(int id, QaSettingServiceDTO updatedQa);
 
