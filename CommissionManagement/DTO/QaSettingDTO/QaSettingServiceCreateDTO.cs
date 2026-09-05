@@ -1,4 +1,4 @@
-﻿namespace CommissionManagement.DTO
+﻿namespace CommissionManagement.DTO.QaSettingDTO
 {
     public class QaSettingServiceCreateDTO
     {

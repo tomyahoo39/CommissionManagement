@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace CommissionManagement.DTO
+namespace CommissionManagement.DTO.QaSettingDTO
 {
     public class QaSettingServiceClientDTO
     {

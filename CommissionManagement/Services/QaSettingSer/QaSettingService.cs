@@ -1,9 +1,9 @@
-﻿using CommissionManagement.DTO;
+﻿using CommissionManagement.DTO.QaSettingDTO;
 using CommissionManagement.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-namespace CommissionManagement.Services
+namespace CommissionManagement.Services.QaSettingSer
 {
     public class QaSettingService : IQaSettingService
     {
@@ -16,7 +16,8 @@ namespace CommissionManagement.Services
         }   
         public async Task<IEnumerable<QaSettingServiceDTO>> GetAllQaForAdmin()
         {
-            var query = await _context.QaSettings.Select(q => new QaSettingServiceDTO
+            var query = await _context.QaSettings.OrderBy(q => q.SortOrder)
+                .Select(q => new QaSettingServiceDTO
             {
                 Id = q.Id,
                 Question = q.Question,
@@ -31,6 +32,7 @@ namespace CommissionManagement.Services
         public async Task<IEnumerable<QaSettingServiceClientDTO>> GetAllQaForClient()
         {
             var query = await _context.QaSettings
+                .AsNoTracking()
                 .Where(q => q.IsVisible == true)
                 .OrderBy(q => q.SortOrder)
                 .Select(q => new QaSettingServiceClientDTO

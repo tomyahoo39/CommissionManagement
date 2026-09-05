@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using CommissionManagement.Models;
-using CommissionManagement.Services;
-using CommissionManagement.DTO;
+using CommissionManagement.DTO.QaSettingDTO;
+using CommissionManagement.Services.QaSettingSer;
 
 [Route("api/[controller]")]
 [ApiController]

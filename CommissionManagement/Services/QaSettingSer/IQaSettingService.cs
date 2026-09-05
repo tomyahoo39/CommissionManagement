@@ -1,6 +1,6 @@
-﻿using CommissionManagement.DTO;
+﻿using CommissionManagement.DTO.QaSettingDTO;
 
-namespace CommissionManagement.Services
+namespace CommissionManagement.Services.QaSettingSer
 {
     public interface IQaSettingService
     {

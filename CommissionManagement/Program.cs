@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using CommissionManagement.Models;
-using CommissionManagement.Services;
+using CommissionManagement.Services.QaSettingSer;
+using CommissionManagement.Services.QaQuestionSer;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,6 +17,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IQaSettingService, QaSettingService>();
+builder.Services.AddScoped<IQaQuestionService, QaQuestionService>();
 
 var app = builder.Build();
 
